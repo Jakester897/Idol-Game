@@ -111,7 +111,6 @@ Clickables :
     -visible at 300 hiddenedi
     -builds 1 hut
     -converts hiddenedi to hiddenedi2
-    
 *Tikitikitiki
 *Bikitiki
 *Frikitiki
