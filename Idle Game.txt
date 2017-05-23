@@ -1,0 +1,338 @@
+Let's make a game!
+//Idol Game
+//Game by Jake Seary
+//Concept: Idle game featuring idols (and puns), mysterious artifacts that have interesting effects that modify the way the game is played.
+//Players can essentially switch between multiple "modes" that fit their playstyle.
+//Link: gHR2KJXi
+
+//Header
+-Idol Game
+-by Jake Seary
+-version 0.1
+-created on 15/05/2017
+ 
+Settings :
+-prices increase by 105%
+-selling gives back 50%
+-resources are hidden by default
+-buildings are hidden by default
+-upgrades are hidden by default
+-achievements are hidden by default
+-clickables are hidden by default
+-boxes : creators, idols, upgrades, idolidol1, tikis, gamename, settings, achievements
+-resources go in the idols box
+-buildings go in the creators box
+-upgrades go in the upgrades box
+-clickables go in the tikis box
+-achievements go in the achievements box
+-title goes in the gamename box
+-save goes in the settings box
+-show log
+-background : black
+-text color : white
+ 
+Resources :
+ 
+*idols
+*hiddenfr
+*hiddenfr2
+    -starts at 31
+*hiddenrsk
+*hiddenrsk2
+    -starts at 41
+*hiddenrskA
+*hiddenrsk2A
+    -starts at 41
+*hiddenrskB
+*hiddenrsk2B
+    -starts at 41
+*hiddenmlt
+*hiddenmlt2
+    -starts at 121
+*hiddenedi
+*hiddenedi2
+    -starts at 301
+*hiddensch
+*hiddendep
+*hiddengov
+*hiddenpol
+*hiddenrobo
+*hiddenengi
+*hiddenprof
+*multoken
+*trash
+   
+ 
+Clickables :
+ 
+*Idolidol
+    -goes in the idolidol1 box
+    -gives 1 idols
+    -visible
+*Fribitiki
+    -visible at 30 hiddenfr
+    -gives 30 idols
+    -gains 100% per Fribitiki1
+    -converts hiddenfr to hiddenfr2
+    -gains 100% per multoken
+    -converts multoken to trash
+*Riskitiki
+    -visible at 40 hiddenrsk
+    -converts idols to trash 50% of the time
+    -multiplies idols 190% 50% of the time
+    -converts hiddenrsk to hiddenrsk2
+    -gains 10% per Riskitiki1
+    -gains 100% per multoken
+    -converts multoken to trash
+*RiskitikiA
+    -named Riskitiki
+    -visible at 40 hiddenrskA
+    -converts idols to trash 25% of the time
+    -multiplies idols 190% 50% of the time
+    -converts hiddenrskA to hiddenrsk2A
+    -gains 10% per Riskitiki1A
+    -gains 100% per multoken
+    -converts multoken to trash
+*RiskitikiB
+    -named Riskitiki
+    -visible at 40 hiddenrskB
+    -converts idols to trash 12% of the time
+    -multiplies idols 190% 50% of the time
+    -converts hiddenrskB to hiddenrsk2B
+    -gains 10% per Riskitiki1B
+    -gains 100% per multoken
+    -converts multoken to trash
+*Multiplitiki
+    -visible at 120 hiddenmlt
+    -gives 1 multoken
+    -converts hiddenmlt to hiddenmlt2
+    -gains 100% per Multiplitiki1
+*Edificitiki
+    -visible at 300 hiddenedi
+    -builds 1 hut
+    -converts hiddenedi to hiddenedi2
+    
+*Tikitikitiki
+*Bikitiki
+*Frikitiki
+ 
+Buildings :
+ 
+*master
+    -abstract
+    -starts at 1
+    -gives 1 hiddenfr for 1 hiddenfr2 requiring 1 Fribitiki1
+    -gives 1 hiddenrsk for 1 hiddenrsk2 requiring 1 Riskitiki1
+    -gives 1 hiddenrskA for 1 hiddenrsk2A requiring 1 Riskitiki1A
+    -gives 1 hiddenrskB for 1 hiddenrsk2B requiring 1 Riskitiki1B
+    -gives 1 hiddenmlt for 1 hiddenmlt2 requiring 1 Multiplitiki1
+    -builds 1 Crocker for 10 hiddensch requiring 10 hiddensch
+    -builds 1 School for 20 hiddendep requiring 20 hiddendep
+    -builds 1 DepEdu for 40 hiddengov requiring 40 hiddengov
+    -builds 1 LocalGov for 80 hiddenpol requiring 80 hiddenpol
+    -builds 1 Politician for 160 hiddenrobo requiring 160 hiddenrobo
+    -builds 1 RoboFac for 320 hiddenengi requiring 320 hiddenengi
+    -builds 1 Engineer for 640 hiddenprof requiring 640 hiddenprof
+*Clickitiki
+    -"A hand-carved wooden tiki that automatically worships Idolidol for you once every ten seconds."
+    -costs 10 idols
+    -gives 0.1 idols
+*Fribitiki1
+    -"A mischievous tiki that is always on the search for a handout.<br>Once every thirty seconds, click Fribitiki for a burst of free idols."
+    -named Fribitiki
+    -unlocks at 10 Clickitiki
+    -costs 200 idols
+*Riskitiki1
+    -"A reckless tiki that plays games of chance with evil spirits.<br>Every minute, click Riskitiki to lend it your idols. Might multiply them, but might gamble them all away."
+    -named Riskitiki
+    -unlocks at 50 Clickitiki
+    -costs 2000 idols
+*Riskitiki1A
+    -"A reckless tiki that plays games of chance with evil spirits.<br>Every minute, click Riskitiki to lend it your idols. Might multiply them, but might gamble them all away."
+    -named Riskitiki
+    -costs 2000 idols
+*Riskitiki1B
+    -"A reckless tiki that plays games of chance with evil spirits.<br>Every minute, click Riskitiki to lend it your idols. Might multiply them, but might gamble them all away."
+    -named Riskitiki
+    -costs 2000 idols
+*Multiplitiki1
+    -"A supportive tiki that always looks for ways to help.<br>Once every two minutes, click Multiplitiki to multiply the effect of the next idol you click."
+    -named Multiplitiki
+    -unlocks at 100 Clickitiki
+    -costs 200000 idols
+    -price increases by 1000%
+*Edificitiki
+    -"A serious, hardworking tiki made of stone.<br>Makes tiki huts. Click them once they're complete to build them, providing some idols."
+    -unlocks at 200 Clickitiki
+    -costs 200000000 idols
+    -gives 1 hiddenedi for 1 hiddenedi2
+*Tikitikitiki1
+    -named Tikitikitiki
+*Likitiki
+    -"An unusual misfit tiki made of fancy wood and straw. Does nothing but waste idols, but could still help you out."
+    -costs 1000000000 idols
+    -takes 1000 idols
+    -price increases by 200%
+    -gives 100000 idols when sold
+    -gains 999% per Likitiki
+*Bikitiki1
+    -named Bikitiki
+*Frikitiki1
+    -"A tiki inhabited by a prankster's spirit. Every minute, click it for a random effect."
+    -named Frikitiki
+*Totem
+    -named Totem Pole
+    -"Stack one of each type of tiki to multiply your income. Also requires a few idols."
+    -takes 11 idols
+    -price increases by 100%.
+    -gains 1000% per Totem
+    -named Totem Pole
+ 
+*Crocker
+    -costs 10 idols
+    -gives 0.1 idols
+*School
+    -named School of Pottery
+    -unlocks at 20 Crocker
+    -costs 100 idols
+    -gives 1 hiddensch
+    -builds 1 Crocker requiring 10 hiddensch
+    -converts hiddensch to trash requiring 10 hiddensch
+    -price increases by 120%
+*DepEdu
+    -named Department of Education
+    -unlocks at 20 School
+    -costs 4000 idols
+    -gives 1 hiddendep
+    -builds 1 School for 20 hiddendep
+    -price increases by 130%
+*LocalGov
+    -named Local Government
+    -unlocks at 20 DepEdu
+    -costs 1000000 idols
+    -gives 1 hiddengov
+    -builds 1 DepEdu for 40 hiddengov
+    -price increases by 140%
+*Politician
+    -unlocks at 20 LocalGov
+    -costs 1000000000 idols
+    -gives 1 hiddenpol
+    -builds 1 LocalGov for 80 hiddenpol
+    -price increases by 150%
+*RoboFac
+    -named Robot Factory
+    -unlocks at 20 Politician
+    -costs 5000000000000 idols
+    -gives 1 hiddenrobo
+    -builds 1 Politician for 160 hiddenrobo
+    -price increases by 160%
+*Engineer
+    -unlocks at 20 RoboFac
+    -costs 75000000000000000 idols
+    -gives 1 hiddenengi
+    -builds 1 RoboFac for 320 hiddenengi
+    -price increases by 180%
+*Professor
+    -unlocks at 20 Engineer
+    -costs 1000000000000000000000 idols
+    -gives 1 hiddenprof
+    -builds 1 Engineer for 640 hiddenprof
+    -price increases by 200%
+ 
+*Worshipper
+*Brotherhood
+*Covenant
+*Temple
+*Spiritual
+    -named Spiritual Site
+*CityState
+    -named City-State
+*Empire
+*Union
+*WOrder
+    -named World Order
+*GalaTreat
+    -named Galactic Treaty
+ 
+Upgrades :
+ 
+*Viigorum
+    -named Viigorum, Idol of Movement
+    -"This gigaidol embodies activity and ambition. The early bird gets the worm according to worshippers of this idol.<br>Gameplay will focus on tikis that are clicked to activate powerful effects.<br>Wards off his indolent brothers, Orthodoxum and Lazibum."
+    -unlocks at 10 idols
+    -costs 10 idols
+    -unlocks Clickitiki
+    -locks Orthodoxum
+    -locks Lazibum
+*Orthodoxum
+    -"This gigaidol embodies customs and morality. Convention is the seed of success according to worshippers of this idol.<br>Gameplay will focus on buildings that produce idols and upgrades for them.<br>Wards off his unruly brothers, Viigorum and Lazibum."
+    -named Orthodoxum, Idol of Tradition
+    -unlocks at 10 idols
+    -costs 10 idols
+    -unlocks Worshipper
+    -locks Viigorum
+    -locks Lazibum
+*Lazibum
+    -"This gigaidol embodies efficiency and tranquility. Nothing causes more problems than stress according to worshippers of this idol.<br>Gameplay will focus on buildings that produce other buildings.<br>Wards off his high-strung brothers, Viigorum and Orthodoxum."
+    -named Lazibum, Idol of Zen
+    -unlocks at 10 idols
+    -costs 10 idols
+    -unlocks Crocker
+    -locks Viigorum
+    -locks Orthodoxum
+*SpiritualCups
+    -"Allows Clicktiki to speak directly to the spirits inhabiting Idolidol, as long as the string doesn't have any slack.<br>Doubles the efficiency of worshipping Idolidol, including by Clickitiki."
+    -named Two Cups Attached via String
+    -costs 100 idols
+    -unlocks at 10 Clickitiki
+    -multiplies efficiency of idolidol by 200%
+    -multiplies efficiency of Clickitiki by 200%
+*OfficeParty
+    "More employees at the office party means more free food needs to be served there, right?<br>Boosts yields of Fribitiki by 10% for every Clicktiki you own."
+    -named Office Party
+    -unlocks at 10 Fribitiki1
+    -costs 400 idols
+    -multiplies efficiency of Fribitiki by 10% per Clickitiki
+*Mantra
+    -"Something to chant while worshipping Idolidol. Whatever language it's in, you cannot recognize it.<br>Doubles the efficiency of worshipping Idolidol."
+    -named Creepy Tiki Mantra
+    -unlocks at 30 Clickitiki
+    -costs 1000 idols
+    -multiplies efficiency of idolidol by 200%
+    -multiplies efficiency of Clickitiki by 200%
+*Dance
+    -"A repetitive, multi-step dance to perform while worshipping Idolidol. Sometimes causes the weather to get weird.<br>Quadruples the efficiency of worshipping Idolidol."
+    -named Ritual Dance
+    -unlocks at 50 Clickitiki
+    -costs 10000 idols
+    -multiplies efficiency of idolidol by 400%
+    -multiplies efficiency of Clickitiki by 400%
+*Lunch
+    -"These shouldn't exist, but in the light of all this creepy idol stuff, they now seem pretty realistic.<br>Doubles the yields of Fribitiki."
+    -named Free Lunch
+    -unlocks at 30 Fribitiki1
+    -costs 10000 idols
+    -multiplies efficiency of Fribitiki by 200%
+*Suertum
+    -"Embodies the spirit of good fortune and makes its owner extra fortunate.<br>Halves the probability that Riskitiki loses all your idols."
+    -named Suertum, Idol of Luck
+    -unlocks at 10 Riskitiki1
+    -costs 9000 idols
+    -converts Riskitiki1 to Riskitiki1A
+    -locks Riskitiki1
+    -converts hiddenrsk to trash
+    -converts hiddenrsk2 to trash
+*nighttime
+    -"The most proper setting for a creepy ritual to take place.<br>Quadruples the efficiency of worshipping Idolidol."
+    -named Dark, Stormy Night
+    -unlocks at 70 Clicktiki
+    -costs 1000000 idols
+    -multiplies efficiency of idolidol by 400%
+    -multiplies efficiency of Clickitiki by 400%
+*Libertum
+    -"Embodies the spirit of sovereignty, boosting the strength of the divine the more freedom there is in society.<br>Boosts efficiency of worshipping Idolidol by 10% for every Fribitiki you own."
+    -named Libertum, Idol of Freedom
+    -unlocks at 50 Fribitiki1
+    -costs 30000 idols
+    -multiplies efficiency of idolidol by 10% per Fribitiki1
+    -multiplies efficiency of Clickitiki by 10% per Fribitiki1
